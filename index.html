@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Manual do Católico</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#8B5A2B" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Manual" />
+  
+  <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    
+    <main class="container py-3">
+      
+      <section class="verse-section text-center mb-4">
+        <p class="verse">Orai sem cessar</p>
+        <p class="verse-ref">— 1 Tessalonicenses 5,17</p>
+      </section>
+
+      <header class="app-header text-center mb-4">
+        <h1 class="app-title">Manual do Católico</h1>
+        <p class="app-subtitle">Seu guia diário de fé e oração</p>
+      </header>
+
+      <section class="features-grid row g-3 justify-content-center">
+        
+        <div class="col-6 col-md-4">
+          <a href="html/liturgia.html" class="feature-card text-decoration-none">
+            <ion-icon name="book-outline" class="card-icon"></ion-icon>
+            <h3 class="card-title">Liturgia Diária</h3>
+            <p class="card-description">Leituras e Evangelho</p>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <a href="html/santo-do-dia.html" class="feature-card text-decoration-none">
+            <ion-icon name="person-circle-outline" class="card-icon"></ion-icon>
+            <h3 class="card-title">Santo do Dia</h3>
+            <p class="card-description">Vida e exemplo</p>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <a href="html/oracoes.html" class="feature-card text-decoration-none">
+            <ion-icon name="heart-outline" class="card-icon"></ion-icon>
+            <h3 class="card-title">Orações</h3>
+            <p class="card-description">Para todos os momentos</p>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <a href="html/santos.html" class="feature-card text-decoration-none">
+            <ion-icon name="people-outline" class="card-icon"></ion-icon>
+            <h3 class="card-title">Santos</h3>
+            <p class="card-description">Intercessores celestes</p>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <a href="html/tercos.html" class="feature-card text-decoration-none">
+            <ion-icon name="rose-outline" class="card-icon"></ion-icon>
+            <h3 class="card-title">Terço</h3>
+            <p class="card-description">Reze o Santo Terço</p>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <a href="html/preces.html" class="feature-card text-decoration-none">
+            <ion-icon name="chatbubble-ellipses-outline" class="card-icon"></ion-icon>
+            <h3 class="card-title">Preces</h3>
+            <p class="card-description">Súplicas ao Senhor</p>
+          </a>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="ad-banner fixed-bottom text-center py-2 bg-light border-top">
+      <div class="ad-placeholder">
+        <small class="text-muted">Espaço para anúncio</small>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker registrado!', reg))
+          .catch(err => console.error('Erro ao registrar SW:', err));
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+:root {
+  --brown: #8B5A2B;
+  --brown-dark: #5D4037;
+  --bg-light: #f9f7f0;
+  --card-bg: #fffdf8;
+  --text-primary: #3E2723;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* Botão Voltar */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brown);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: rgba(139, 90, 43, 0.1);
+}
+
+/* Imagem */
+.image-container {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid var(--brown);
+  box-shadow: 0 6px 20px rgba(139, 90, 43, 0.2);
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.santo-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Botão Calendário na imagem */
+.btn-calendario {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(139, 90, 43, 0.85);
+  border: none;
+  color: #fffdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.btn-calendario:hover {
+  background: var(--brown-dark);
+  transform: scale(1.05);
+}
+
+.btn-calendario ion-icon {
+  font-size: 1.25rem;
+}
+
+/* Nome e Data */
+.santo-nome {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.data-text {
+  font-size: 0.875rem;
+  color: var(--brown);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.info-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+  box-shadow: 0 2px 8px rgba(139, 90, 43, 0.1);
+}
+
+.historia-card {
+  border-color: rgba(139, 90, 43, 0.3);
+  border-width: 1.5px;
+}
+
+.info-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.historia-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.info-text,
+.historia-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  text-align: justify;
+  margin: 0;
+}
+
+/* Botão Compartilhar */
+.btn-compartilhar {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--brown);
+  border: none;
+  color: #fffdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.btn-compartilhar:hover {
+  background: var(--brown-dark);
+  transform: translateY(-2px);
+}
+
+.btn-compartilhar ion-icon {
+  font-size: 1.5rem;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 25px;
+  border: 1px solid var(--brown);
+  font-family: 'Crimson Text', serif;
+}
+
+.modal-header {
+  background: transparent;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal-title {
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+/* =========================================
+   CALENDÁRIO BONITO E MODERNO
+   ========================================= */
+
+#calendario-container {
+  padding: 10px;
+}
+
+/* Header do calendário */
+.calendar-header {
+  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
+  color: #fffdf8;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+}
+
+.calendar-month-year {
+  flex: 1;
+}
+
+.calendar-month {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.calendar-year {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Botões de navegação */
+.btn-calendario-nav {
+  background: rgba(255, 253, 248, 0.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #fffdf8;
+}
+
+.btn-calendario-nav:hover {
+  background: rgba(255, 253, 248, 0.3);
+  transform: scale(1.1);
+}
+
+.btn-calendario-nav ion-icon {
+  font-size: 1.5rem;
+}
+
+/* Dias da semana */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brown);
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+
+/* Grid de dias */
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-family: 'Crimson Text', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  padding: 4px;
+}
+
+.calendar-day:hover:not(.calendar-day-empty):not(.calendar-day-selected) {
+  background: rgba(139, 90, 43, 0.1);
+  border-color: rgba(139, 90, 43, 0.3);
+  transform: scale(1.05);
+}
+
+.calendar-day-empty {
+  visibility: hidden;
+  cursor: default;
+}
+
+/* Dia atual (hoje) */
+.calendar-day-today {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff5d6 100%);
+  border-color: var(--brown);
+  font-weight: 700;
+}
+
+.today-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 0.7rem;
+  color: var(--brown);
+}
+
+/* Dia selecionado */
+.calendar-day-selected {
+  background: linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%) !important;
+  color: #fffdf8 !important;
+  border-color: var(--brown);
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.4);
+  transform: scale(1.1);
+}
+
+.calendar-day-selected .day-number {
+  font-weight: 700;
+}
+
+.calendar-day-selected .today-icon {
+  color: #fffdf8;
+}
+
+/* Botão Ir para hoje */
+.btn-ir-hoje {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fffdf8;
+  font-family: 'Crimson Text', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+}
+
+.btn-ir-hoje:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+}
+
+.btn-ir-hoje ion-icon {
+  font-size: 1.1rem;
+}
+
+/* Anúncio */
+.ad-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #f0ede5;
+  padding: 8px 0;
+  text-align: center;
+  z-index: 999;
+}
+
+.ad-placeholder {
+  background: #e8e4da;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .santo-nome { font-size: 1.5rem; }
+  .info-card { padding: 16px; }
+  .btn-compartilhar { bottom: 24px; right: 16px; width: 56px; height: 56px; }
+  .calendar-month { font-size: 1.1rem; }
+  .calendar-weekday { font-size: 0.7rem; }
+  .calendar-day { font-size: 0.85rem; }
+}
+/* Botão Voltar */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
+  color: #fffdf8;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+  font-family: 'Crimson Text', serif;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+  color: #fffdf8;
+}
+
+.btn-voltar:active {
+  transform: scale(0.98);
+}
+
+.btn-voltar ion-icon {
+  font-size: 1.2rem;
+}

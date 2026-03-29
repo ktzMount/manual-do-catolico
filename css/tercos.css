@@ -1,0 +1,363 @@
+/* ===== CORES E BASE ===== */
+:root {
+  --brown: #8B5A2B;
+  --brown-dark: #5D4037;
+  --brown-light: #A1887F;
+  --bg-light: #f9f7f0;
+  --card-bg: #fffdf8;
+  --text-primary: #3E2723;
+  --text-secondary: #8B5A2B;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* ===== GRID DE CARDS (LISTA) ===== */
+.tercos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 0 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card de Conjunto */
+.card-conjunto {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 24px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+  box-shadow: 0 6px 12px rgba(139, 90, 43, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-align: center;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-conjunto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(139, 90, 43, 0.2);
+}
+
+.card-conjunto:active {
+  transform: scale(0.98);
+}
+
+.card-conjunto-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card-conjunto-divider {
+  height: 1.5px;
+  width: 40px;
+  background: var(--brown);
+  margin: 12px auto;
+  opacity: 0.3;
+}
+
+.card-conjunto-dias {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ===== TELA DE REZA ===== */
+.conjunto-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+/* Card do Mistério */
+.misterio-card {
+  background: rgba(139, 90, 43, 0.07);
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+  box-shadow: 0 2px 4px rgba(139, 90, 43, 0.1);
+}
+
+.misterio-numeral {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+
+.misterio-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--brown-dark);
+  margin-bottom: 6px;
+}
+
+.misterio-resumo {
+  font-size: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #3e2e20;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.btn-reflexao {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(139, 90, 43, 0.1);
+  color: var(--brown-dark);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-reflexao:hover {
+  background: rgba(139, 90, 43, 0.2);
+}
+
+/* Bolinhas de Progresso */
+.bolinhas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 8px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bolinha {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.bolinha.concluida {
+  background: var(--brown-light);
+}
+
+.bolinha.ativa {
+  background: var(--brown);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.2);
+}
+
+.bolinha.pendente {
+  background: #D7CCC8;
+}
+
+/* Card da Oração */
+.card-oracao {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(139, 90, 43, 0.2);
+  box-shadow: 0 3px 6px rgba(139, 90, 43, 0.15);
+  min-height: 200px;
+}
+
+.oracao-nome {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--brown-dark);
+  margin-bottom: 16px;
+}
+
+.oracao-texto {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2c1e12;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+/* Seção Bíblica */
+.biblica-section {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(139, 90, 43, 0.2);
+}
+
+.biblica-section h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 6px;
+}
+
+.biblica-section p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #2c1e12;
+  line-height: 1.6;
+}
+
+/* Botões de Navegação */
+.botoes-navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-navegacao {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--brown);
+  color: #fffdf8;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 6px rgba(139, 90, 43, 0.3);
+}
+
+.btn-navegacao:hover:not(:disabled) {
+  background: #7a4f26;
+}
+
+.btn-navegacao:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-navegacao:disabled {
+  background: #D7CCC8;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-navegacao ion-icon {
+  font-size: 1.2rem;
+}
+
+/* Modal de Reflexão */
+.reflexao-texto {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3e2e20;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+.btn-brown {
+  background: var(--brown);
+  color: #fffdf8;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-brown:hover {
+  background: #7a4f26;
+}
+
+/* Modal Bootstrap overrides */
+.modal-content {
+  border-radius: 16px;
+  border: 1px solid rgba(139, 90, 43, 0.2);
+  font-family: 'Crimson Text', serif;
+}
+
+.modal-title {
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .card-conjunto {
+    padding: 20px;
+    min-height: 110px;
+  }
+  
+  .card-conjunto-title {
+    font-size: 1.1rem;
+  }
+  
+  .conjunto-title {
+    font-size: 1.3rem;
+  }
+  
+  .misterio-card {
+    padding: 12px;
+  }
+  
+  .misterio-titulo {
+    font-size: 1.1rem;
+  }
+  
+  .card-oracao {
+    padding: 18px;
+  }
+  
+  .oracao-nome {
+    font-size: 1.15rem;
+  }
+  
+  .oracao-texto {
+    font-size: 1rem;
+  }
+  
+  .btn-navegacao {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+/* Botão Voltar */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
+  color: #fffdf8;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+  font-family: 'Crimson Text', serif;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+  color: #fffdf8;
+}
+
+.btn-voltar:active {
+  transform: scale(0.98);
+}
+
+.btn-voltar ion-icon {
+  font-size: 1.2rem;
+}

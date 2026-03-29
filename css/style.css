@@ -1,0 +1,242 @@
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================= */
+:root {
+  --color-primary: #8B5A2B;
+  --color-primary-dark: #5D4037;
+  --color-bg-cream: #fffdf8;
+  --color-bg-light: #f9f0e0;
+  --color-bg-ad: #f0ede5;
+  --color-text-dark: #2c1e12;
+  --color-text-muted: #8B5A2B;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --border-radius-card: 18px;
+  --border-radius-header: 18px;
+  --font-serif: 'Crimson Text', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-bg-cream);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background com textura (repita a imagem) */
+.background-wrapper {
+  background-image: url('../assets/images/background-texture.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 70px; /* Espaço para o banner de anúncio */
+}
+
+/* =========================================
+   VERSÍCULO
+   ========================================= */
+.verse-section {
+  padding-top: 10px;
+}
+
+.verse {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-primary-dark);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.verse-ref {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* =========================================
+   CABEÇALHO COM GRADIENTE
+   ========================================= */
+.app-header {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  padding: 1.4rem 1.25rem;
+  border-radius: var(--border-radius-header);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+}
+
+.app-title {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #fffdf8;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.app-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: #f9f0e0;
+  font-style: italic;
+  margin: 0;
+}
+
+/* =========================================
+   CARDS DE FUNCIONALIDADES
+   ========================================= */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 253, 248, 0.9);
+  border: 1px solid rgba(139, 90, 43, 0.2);
+  border-radius: var(--border-radius-card);
+  padding: 1.25rem 1rem;
+  min-height: 140px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary);
+}
+
+.card-icon {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+
+.card-description {
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Ajuste para telas menores: 2 colunas sempre no mobile */
+@media (max-width: 767px) {
+  .features-grid .col-6 {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+/* =========================================
+   BANNER DE ANÚNCIO (FIXO NA BASE)
+   ========================================= */
+.ad-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-ad);
+  border-top: 1px solid rgba(139, 90, 43, 0.1);
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  width: 100%;
+}
+
+.ad-placeholder {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Ajuste para não esconder conteúdo atrás do banner fixo */
+@media (min-width: 768px) {
+  .background-wrapper {
+    padding-bottom: 60px;
+  }
+}
+
+/* =========================================
+   ACESSIBILIDADE E UTILITÁRIOS
+   ========================================= */
+/* Foco visível para navegação por teclado */
+.feature-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Suaviza a rolagem */
+html {
+  scroll-behavior: smooth;
+}
+/* Adicionar no final do style.css que já criamos */
+
+/* Cores específicas */
+:root {
+  --color-brown: #8B5A2B;
+  --color-brown-dark: #5D4037;
+}
+
+.text-brown {
+  color: var(--color-brown) !important;
+}
+
+.spinner-border.text-brown {
+  border-color: var(--color-brown);
+  border-right-color: transparent;
+}
+
+/* Botões do calendário */
+.btn-calendario-dia {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  background-color: rgba(139, 90, 43, 0.1);
+  border: 1px solid var(--color-brown);
+  color: var(--color-text-dark);
+  transition: all 0.2s;
+}
+
+.btn-calendario-dia:hover:not(:disabled) {
+  background-color: var(--color-brown);
+  color: #fffdf8;
+  transform: scale(1.05);
+}
+
+.btn-calendario-dia.active,
+.btn-calendario-dia:disabled {
+  background-color: var(--color-brown);
+  color: #fffdf8;
+  cursor: default;
+}

@@ -1,0 +1,337 @@
+/* ===== CORES E BASE ===== */
+:root {
+  --brown: #8B5A2B;
+  --brown-dark: #5D4037;
+  --brown-light: #A1887F;
+  --bg-light: #f9f7f0;
+  --card-bg: #fffdf8;
+  --text-primary: #3E2723;
+  --text-secondary: #8B5A2B;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* ===== BUSCA ===== */
+.search-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  border: 2px solid rgba(139, 90, 43, 0.2);
+  border-radius: 30px;
+  background: var(--card-bg);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--brown);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--brown);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.clear-search {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--brown);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ===== LISTA DE SANTOS ===== */
+.santos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 8px;
+}
+
+.santo-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 14px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+  box-shadow: 0 4px 8px rgba(139, 90, 43, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.santo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(139, 90, 43, 0.15);
+}
+
+.santo-card:active {
+  transform: scale(0.98);
+  opacity: 0.95;
+}
+
+.santo-image-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid rgba(139, 90, 43, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.santo-image-wrapper img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.santo-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.santo-nome {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.santo-dia {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.santo-chevron {
+  color: rgba(139, 90, 43, 0.4);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ===== MENSAGEM VAZIA ===== */
+.empty-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--brown-dark);
+}
+
+.empty-container ion-icon {
+  font-size: 48px;
+  color: var(--brown);
+  margin-bottom: 16px;
+}
+
+.empty-container p {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.empty-container small {
+  color: var(--brown);
+}
+
+/* ===== DETALHE DO SANTO ===== */
+
+/* Imagem */
+.image-container {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 10px;
+  border: 2px solid var(--brown);
+  box-shadow: 0 6px 12px rgba(139, 90, 43, 0.2);
+}
+
+.santo-imagem {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+/* Cards de informação */
+.info-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+  box-shadow: 0 4px 8px rgba(139, 90, 43, 0.1);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.divider {
+  height: 1.5px;
+  background: var(--brown);
+  width: 30%;
+  margin: 0 auto 16px;
+  opacity: 0.3;
+}
+
+.santo-texto {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  text-align: justify;
+  white-space: pre-line;
+  margin: 0;
+}
+
+/* Grid de informações */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Card de curiosidade */
+.curiosidade-card {
+  border: 1.5px dashed var(--brown);
+  background: var(--card-bg);
+}
+
+.curiosidade-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.curiosidade-texto {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  text-align: justify;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Anúncio */
+.ad-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #f0ede5;
+  padding: 8px 0;
+  text-align: center;
+  z-index: 999;
+}
+
+.ad-placeholder {
+  background: #e8e4da;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .santo-card {
+    padding: 12px;
+  }
+  
+  .santo-image-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .santo-image-wrapper img {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .santo-nome {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .santo-texto {
+    font-size: 1rem;
+  }
+}
+/* Botão Voltar */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
+  color: #fffdf8;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+  font-family: 'Crimson Text', serif;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+  color: #fffdf8;
+}
+
+.btn-voltar:active {
+  transform: scale(0.98);
+}
+
+.btn-voltar ion-icon {
+  font-size: 1.2rem;
+}

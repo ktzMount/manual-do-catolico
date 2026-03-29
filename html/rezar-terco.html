@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#8B5A2B"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <title>Rezando o Terço - Manual do Católico</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/tercos.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    <main class="container py-3">
+      
+      <a href="tercos.html" class="btn-voltar mb-3">
+        <ion-icon name="arrow-back"></ion-icon>
+        <span>Voltar</span>
+      </a>
+
+      <!-- Loading -->
+      <div id="loading" class="text-center py-5">
+        <div class="spinner-border text-brown" role="status"></div>
+        <p class="mt-3 text-brown">Preparando o terço...</p>
+      </div>
+
+      <!-- Conteúdo -->
+      <div id="terco-content" style="display: none;">
+        
+        <!-- Título do Conjunto -->
+        <h2 id="conjunto-nome" class="conjunto-title text-center mb-3"></h2>
+
+        <!-- Card do Mistério (quando aplicável) -->
+        <div id="misterio-card" class="misterio-card mb-4" style="display: none;">
+          <div id="misterio-numeral" class="misterio-numeral"></div>
+          <h3 id="misterio-titulo" class="misterio-titulo"></h3>
+          <p id="misterio-resumo" class="misterio-resumo"></p>
+          <button id="btn-reflexao" class="btn-reflexao">
+            <ion-icon name="book-outline"></ion-icon>
+            <span>Refletir</span>
+          </button>
+        </div>
+
+        <!-- Bolinhas de Progresso -->
+        <div id="bolinhas-container" class="bolinhas-container mb-4"></div>
+
+        <!-- Texto da Oração -->
+        <div class="card-oracao">
+          <h3 id="oracao-nome" class="oracao-nome"></h3>
+          <div id="oracao-texto" class="oracao-texto"></div>
+          
+          <!-- Seção Bíblica (quando aplicável) -->
+          <div id="biblica-section" class="biblica-section" style="display: none;">
+            <h4>Palavra e contexto:</h4>
+            <p id="biblica-texto"></p>
+          </div>
+        </div>
+
+        <!-- Botões de Navegação -->
+        <div class="botoes-navegacao mt-4">
+          <button id="btn-anterior" class="btn-navegacao" disabled>
+            <ion-icon name="chevron-back"></ion-icon>
+            <span>Anterior</span>
+          </button>
+          
+          <button id="btn-proximo" class="btn-navegacao btn-proximo">
+            <span>Próximo</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </button>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Modal de Reflexão (Bootstrap) -->
+    <div class="modal fade" id="modalReflexao" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Reflexão Profunda</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="reflexao-texto" class="reflexao-texto"></div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-brown" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner de Anúncio -->
+    <footer class="ad-banner">
+      <div class="ad-placeholder"><small>Espaço para anúncio</small></div>
+    </footer>
+  </div>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../data/tercosdata.js"></script>
+  <script src="../js/tercos.js"></script>
+</body>
+</html>

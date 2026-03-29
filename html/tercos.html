@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#8B5A2B"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <title>Santo Terço - Manual do Católico</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/tercos.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    <main class="container py-3">
+      
+      <a href="../index.html" class="btn-voltar mb-3">
+        <ion-icon name="arrow-back"></ion-icon>
+        <span>Voltar</span>
+      </a>
+
+      <h1 class="page-title text-center mb-2">Santo Terço</h1>
+      <p class="text-center text-muted mb-4">Escolha os mistérios para rezar</p>
+
+      <!-- Grid de Cards -->
+      <div id="tercos-grid" class="tercos-grid"></div>
+
+      <div style="height: 80px;"></div>
+    </main>
+
+    <!-- Banner de Anúncio -->
+    <footer class="ad-banner">
+      <div class="ad-placeholder"><small>Espaço para anúncio</small></div>
+    </footer>
+  </div>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../data/tercosdata.js"></script>
+  <script src="../js/tercos.js"></script>
+</body>
+</html>

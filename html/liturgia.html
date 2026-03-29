@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#8B5A2B"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <title>Liturgia Diária - Manual do Católico</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/liturgia.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    <main class="container py-3">
+      
+      <a href="../index.html" class="btn-voltar mb-3">
+        <ion-icon name="arrow-back"></ion-icon>
+        <span>Voltar</span>
+      </a>
+
+      <div id="loading" class="text-center py-5">
+        <div class="spinner-border text-brown" role="status">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
+        <p class="mt-3 text-brown">Carregando Liturgia...</p>
+      </div>
+
+      <div id="liturgia-content" style="display: none;">
+        <div class="header text-center mb-4">
+          <h1 id="liturgia-titulo" class="liturgia-title mb-2"></h1>
+          <p id="liturgia-data" class="liturgia-date mb-1"></p>
+          <p id="liturgia-cor" class="liturgia-cor mb-0"></p>
+        </div>
+
+        <div id="santo-section" class="info-card mb-4" style="display: none;">
+          <h3 class="section-title">Santo do Dia</h3>
+          <div id="santo-texto" class="texto-formatado"></div>
+        </div>
+
+        <div id="tabs-container" class="tabs-container mb-4"></div>
+
+        <div id="content-section" class="content-section" style="display: none;">
+          <h3 id="leitura-titulo" class="content-title text-center mb-3"></h3>
+          
+          <div id="refrao-container" class="refrao-container mb-3" style="display: none;">
+            <p class="refrao-label">Refrão:</p>
+            <p id="refrao-texto" class="refrao"></p>
+          </div>
+          
+          <p id="leitura-referencia" class="referencia text-center mb-3"></p>
+          <div id="leitura-texto" class="texto-formatado"></div>
+          
+          <button id="btn-compartilhar-leitura" class="share-button mt-4">
+            <ion-icon name="share-social"></ion-icon>
+            <span>Compartilhar</span>
+          </button>
+        </div>
+
+        <div style="height: 80px;"></div>
+      </div>
+    </main>
+
+    <div class="modal fade" id="shareModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Compartilhar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <button class="share-option" id="share-curto">
+              <ion-icon name="link"></ion-icon>
+              <span>Título e referência</span>
+            </button>
+            <button class="share-option" id="share-completo">
+              <ion-icon name="document-text"></ion-icon>
+              <span>Texto completo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="ad-banner">
+      <div class="ad-placeholder">
+        <small>Espaço para anúncio</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/liturgia.js"></script>
+</body>
+</html>

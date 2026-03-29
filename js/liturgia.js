@@ -1,0 +1,348 @@
+// =========================================
+// LITURGIA DIÁRIA - PWA (COM TABS)
+// =========================================
+
+let liturgiaData = null;
+let shareModal;
+let abaAtiva = 'primeira';
+let leituras = [];
+
+// =========================================
+// Mapeamento de tabs
+// =========================================
+const nomeAba = {
+  'primeira': '1ª Leitura',
+  'salmo': 'Salmo',
+  'segunda': '2ª Leitura',
+  'evangelho': 'Evangelho'
+};
+
+// =========================================
+// Formata texto com versículos destacados
+// =========================================
+function formatarTextoComVersiculos(texto) {
+  if (!texto) return '';
+  
+  const partes = texto.split(/(\d+\s)/g);
+  
+  return partes.map(parte => {
+    if (/^\d+\s$/.test(parte)) {
+      return `<span class="versiculo-num">${parte.trim()}</span>`;
+    }
+    return parte;
+  }).join('');
+}
+
+// =========================================
+// Detecta abas disponíveis
+// =========================================
+function detectarAbas(leituras) {
+  const abas = [];
+  
+  leituras.forEach((leitura, index) => {
+    const titulo = leitura.titulo.toLowerCase();
+    
+    if (titulo.includes('primeira') || 
+        titulo.includes('1ª') || 
+        titulo.includes('1a') ||
+        titulo.includes('1.') ||
+        (titulo.includes('leitura') && index === 0)) {
+      if (!abas.includes('primeira')) abas.push('primeira');
+    } else if (titulo.includes('salmo') || titulo.includes('responsorial')) {
+      if (!abas.includes('salmo')) abas.push('salmo');
+    } else if (titulo.includes('segunda') || 
+               titulo.includes('2ª') || 
+               titulo.includes('2a') ||
+               titulo.includes('2.')) {
+      if (!abas.includes('segunda')) abas.push('segunda');
+    } else if (titulo.includes('evangelho')) {
+      if (!abas.includes('evangelho')) abas.push('evangelho');
+    }
+  });
+  
+  return abas;
+}
+
+// =========================================
+// Obtém leitura atual
+// =========================================
+function getLeituraAtual(aba) {
+  switch (aba) {
+    case 'primeira':
+      return leituras.find(l => {
+        const titulo = l.titulo.toLowerCase();
+        return titulo.includes('primeira') || 
+               titulo.includes('1ª') || 
+               titulo.includes('1a') ||
+               titulo.includes('1.') ||
+               (titulo.includes('leitura') && leituras.indexOf(l) === 0);
+      }) || null;
+      
+    case 'salmo':
+      return leituras.find(l => {
+        const titulo = l.titulo.toLowerCase();
+        return titulo.includes('salmo') || titulo.includes('responsorial');
+      }) || null;
+      
+    case 'segunda':
+      return leituras.find(l => {
+        const titulo = l.titulo.toLowerCase();
+        return titulo.includes('segunda') || 
+               titulo.includes('2ª') || 
+               titulo.includes('2a') ||
+               titulo.includes('2.');
+      }) || null;
+      
+    case 'evangelho':
+      return leituras.find(l => {
+        const titulo = l.titulo.toLowerCase();
+        return titulo.includes('evangelho');
+      }) || null;
+      
+    default:
+      return null;
+  }
+}
+
+// =========================================
+// Renderiza tabs
+// =========================================
+function renderizarTabs(abas) {
+  const container = document.getElementById('tabs-container');
+  container.innerHTML = '';
+  
+  const tabsDiv = document.createElement('div');
+  tabsDiv.className = 'tabs-wrapper';
+  
+  abas.forEach(aba => {
+    const btn = document.createElement('button');
+    btn.className = `tab ${abaAtiva === aba ? 'tab-ativa' : ''}`;
+    btn.textContent = nomeAba[aba];
+    btn.onclick = () => {
+      abaAtiva = aba;
+      renderizarTabs(abas);
+      renderizarConteudo();
+    };
+    tabsDiv.appendChild(btn);
+  });
+  
+  container.appendChild(tabsDiv);
+}
+
+// =========================================
+// Renderiza conteúdo da aba
+// =========================================
+function renderizarConteudo() {
+  const leitura = getLeituraAtual(abaAtiva);
+  const contentSection = document.getElementById('content-section');
+  
+  if (!leitura) {
+    contentSection.style.display = 'none';
+    return;
+  }
+  
+  document.getElementById('leitura-titulo').textContent = leitura.titulo;
+  document.getElementById('leitura-referencia').textContent = leitura.referencia;
+  document.getElementById('leitura-texto').innerHTML = formatarTextoComVersiculos(leitura.texto);
+  
+  const refraoContainer = document.getElementById('refrao-container');
+  if (leitura.isSalmo && leitura.refrao) {
+    document.getElementById('refrao-texto').textContent = `R. ${leitura.refrao}`;
+    refraoContainer.style.display = 'block';
+  } else {
+    refraoContainer.style.display = 'none';
+  }
+  
+  contentSection.style.display = 'block';
+  
+  const btnCompartilhar = document.getElementById('btn-compartilhar-leitura');
+  btnCompartilhar.onclick = () => {
+    prepararCompartilhamento(leitura);
+    shareModal.show();
+  };
+}
+
+// =========================================
+// Busca liturgia da API
+// =========================================
+async function buscarLiturgia() {
+  try {
+    const response = await fetch('https://liturgia.up.railway.app/v2/');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const raw = await response.json();
+    const leiturasAPI = raw.leituras || {};
+    leituras = [];
+
+    const pLeitura = Array.isArray(leiturasAPI.primeiraLeitura) ? leiturasAPI.primeiraLeitura[0] : null;
+    if (pLeitura?.texto) {
+      leituras.push({
+        titulo: pLeitura.titulo || "Primeira Leitura",
+        referencia: pLeitura.referencia || "",
+        texto: pLeitura.texto,
+        tipo: 'leitura'
+      });
+    }
+
+    const salmo = Array.isArray(leiturasAPI.salmo) ? leiturasAPI.salmo[0] : null;
+    if (salmo?.texto) {
+      leituras.push({
+        titulo: "Salmo Responsorial",
+        referencia: salmo.referencia || "",
+        texto: salmo.texto,
+        refrao: salmo.refrao || "",
+        isSalmo: true,
+        tipo: 'salmo'
+      });
+    }
+
+    const sLeitura = Array.isArray(leiturasAPI.segundaLeitura) ? leiturasAPI.segundaLeitura[0] : null;
+    if (sLeitura?.texto) {
+      leituras.push({
+        titulo: sLeitura.titulo || "Segunda Leitura",
+        referencia: sLeitura.referencia || "",
+        texto: sLeitura.texto,
+        tipo: 'leitura'
+      });
+    }
+
+    const evangelho = Array.isArray(leiturasAPI.evangelho) ? leiturasAPI.evangelho[0] : null;
+    if (evangelho?.texto) {
+      leituras.push({
+        titulo: "Evangelho",
+        referencia: evangelho.referencia || "",
+        texto: evangelho.texto,
+        tipo: 'evangelho'
+      });
+    }
+
+    const santo = typeof raw.santo === 'string' ? raw.santo : raw.santo?.texto;
+
+    return {
+      titulo: raw.liturgia || "Liturgia Diária",
+      data: raw.data || "",
+      cor: raw.cor || "Desconhecida",
+      santo: santo || null,
+      leituras: leituras
+    };
+
+  } catch (error) {
+    console.error("❌ Erro ao buscar liturgia:", error);
+    return {
+      titulo: "Erro",
+      data: "",
+      cor: "",
+      santo: null,
+      leituras: [],
+      erro: "Não foi possível carregar a liturgia. Verifique sua conexão."
+    };
+  }
+}
+
+// =========================================
+// Prepara dados para compartilhamento
+// =========================================
+function prepararCompartilhamento(leitura) {
+  const baseUrl = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
+  
+  window.shareData = {
+    curto: `${leitura.titulo}\n${leitura.referencia}\n\nConfira no app Manual Do Católico!\n${baseUrl}`,
+    completo: `${leitura.titulo}\n${leitura.referencia}\n\n${leitura.texto}\n\nBaixe o app: ${baseUrl}`
+  };
+}
+
+// =========================================
+// Executa o compartilhamento
+// =========================================
+async function executarCompartilhamento(tipo) {
+  const texto = window.shareData?.[tipo];
+  if (!texto) return;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'Liturgia Diária',
+        text: texto,
+        url: window.location.href
+      });
+    } catch (err) {
+      if (err.name !== 'AbortError') console.error('Erro ao compartilhar:', err);
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(texto);
+      alert('Texto copiado! Cole onde quiser compartilhar. ✝️');
+    } catch (err) {
+      alert('Não foi possível compartilhar. Tente manualmente.');
+    }
+  }
+  shareModal.hide();
+}
+
+// =========================================
+// Renderiza a liturgia completa
+// =========================================
+function renderizarLiturgia(data) {
+  document.getElementById('liturgia-titulo').textContent = data.titulo;
+  document.getElementById('liturgia-data').textContent = data.data;
+  document.getElementById('liturgia-cor').textContent = `Cor Litúrgica: ${data.cor}`;
+
+  const santoSection = document.getElementById('santo-section');
+  if (data.santo) {
+    document.getElementById('santo-texto').innerHTML = formatarTextoComVersiculos(data.santo);
+    santoSection.style.display = 'block';
+  } else {
+    santoSection.style.display = 'none';
+  }
+
+  if (data.leituras.length > 0) {
+    const abas = detectarAbas(data.leituras);
+    if (abas.length > 0) {
+      abaAtiva = abas[0];
+      renderizarTabs(abas);
+      renderizarConteudo();
+    }
+  }
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('liturgia-content').style.display = 'block';
+}
+
+// =========================================
+// Inicialização
+// =========================================
+document.addEventListener('DOMContentLoaded', async () => {
+  const modalEl = document.getElementById('shareModal');
+  if (modalEl && typeof bootstrap !== 'undefined') {
+    shareModal = new bootstrap.Modal(modalEl);
+
+    document.getElementById('share-curto')?.addEventListener('click', () => executarCompartilhamento('curto'));
+    document.getElementById('share-completo')?.addEventListener('click', () => executarCompartilhamento('completo'));
+  }
+
+  try {
+    const data = await buscarLiturgia();
+    
+    if (data.erro) {
+      document.getElementById('loading').innerHTML = `
+        <div class="alert alert-danger" role="alert">
+          <h5>⚠️ ${data.erro}</h5>
+          <button class="btn btn-brown mt-2" onclick="location.reload()">Tentar novamente</button>
+        </div>
+      `;
+      return;
+    }
+    
+    liturgiaData = data;
+    renderizarLiturgia(data);
+    
+  } catch (error) {
+    console.error('Erro crítico:', error);
+    document.getElementById('loading').innerHTML = `
+      <div class="alert alert-danger">Erro ao carregar. Recarregue a página.</div>
+    `;
+  }
+});

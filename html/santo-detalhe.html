@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#8B5A2B"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <title>Santo - Manual do Católico</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/santos.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    <main class="container py-3">
+      
+      <a href="santos.html" class="btn-voltar mb-3">
+        <ion-icon name="arrow-back"></ion-icon>
+        <span>Voltar</span>
+      </a>
+
+      <!-- Loading -->
+      <div id="loading" class="text-center py-5">
+        <div class="spinner-border text-brown" role="status"></div>
+        <p class="mt-3 text-brown">Carregando santo...</p>
+      </div>
+
+      <!-- Conteúdo -->
+      <div id="santo-content" style="display: none;">
+        
+        <!-- Imagem -->
+        <div class="image-container mb-4">
+          <img id="santo-imagem" src="" alt="" class="santo-imagem" />
+        </div>
+
+        <!-- Vida e Martírio -->
+        <div class="info-card mb-4">
+          <h3 class="section-title">Vida e Martírio</h3>
+          <div class="divider"></div>
+          <p id="santo-historia" class="santo-texto"></p>
+        </div>
+
+        <!-- Grid de Informações -->
+        <div class="info-grid mb-4">
+          <div class="info-card">
+            <p class="label">Dia Festivo</p>
+            <p id="santo-diafestivo" class="value"></p>
+          </div>
+          <div class="info-card" id="card-regiao" style="display: none;">
+            <p class="label">Região</p>
+            <p id="santo-regiao" class="value"></p>
+          </div>
+        </div>
+
+        <!-- Nascimento (opcional) -->
+        <div class="info-card mb-4" id="card-nascimento" style="display: none;">
+          <p class="label">Nascimento</p>
+          <p id="santo-nascimento" class="value"></p>
+        </div>
+
+        <!-- Canonização (opcional) -->
+        <div class="info-card mb-4" id="card-canonizacao" style="display: none;">
+          <p class="label">Canonização</p>
+          <p id="santo-canonizacao" class="value"></p>
+        </div>
+
+        <!-- Curiosidade (opcional) -->
+        <div class="info-card curiosidade-card mb-4" id="card-curiosidade" style="display: none;">
+          <p class="curiosidade-label">Curiosidade</p>
+          <p id="santo-curiosidade" class="curiosidade-texto"></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Banner de Anúncio -->
+    <footer class="ad-banner">
+      <div class="ad-placeholder"><small>Espaço para anúncio</small></div>
+    </footer>
+  </div>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../data/santosdata.js"></script>
+  <script src="../js/santos.js"></script>
+</body>
+</html>

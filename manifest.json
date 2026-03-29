@@ -1,0 +1,22 @@
+{
+  "short_name": "Manual",
+  "name": "Manual do Católico",
+  "icons": [
+    {
+      "src": "assets/images/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/images/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#f9f7f0",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#8B5A2B",
+  "description": "Seu guia diário de fé e oração."
+}

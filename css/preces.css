@@ -1,0 +1,229 @@
+/* ===== CORES E BASE ===== */
+:root {
+  --brown: #8B5A2B;
+  --brown-dark: #5D4037;
+  --bg-light: #f9f7f0;
+  --card-bg: #fffdf8;
+  --text-primary: #3E2723;
+  --text-secondary: #8B5A2B;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* ===== LISTA DE PRECES ===== */
+.preces-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 8px;
+}
+
+.prece-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+  box-shadow: 0 4px 8px rgba(139, 90, 43, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  min-height: 90px;
+}
+
+.prece-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(139, 90, 43, 0.15);
+}
+
+.prece-card:active {
+  transform: scale(0.98);
+  opacity: 0.95;
+}
+
+.prece-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(139, 90, 43, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.prece-icon ion-icon {
+  font-size: 20px;
+  color: var(--brown);
+}
+
+.prece-nome {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.prece-chevron {
+  color: rgba(139, 90, 43, 0.3);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ===== DETALHE DA PRECE ===== */
+.prece-header {
+  margin-bottom: 32px;
+}
+
+.prece-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--brown);
+  margin: 12px auto 0;
+  border-radius: 1px;
+}
+
+.prece-body {
+  margin-bottom: 40px;
+}
+
+.prece-texto {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #3e2e20;
+  text-align: justify;
+  white-space: pre-line;
+  letter-spacing: 0.2px;
+}
+
+/* Botão Amém com gradiente */
+.btn-amen {
+  background: linear-gradient(135deg, var(--brown), var(--brown-dark));
+  color: #fffdf8;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 40px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  font-family: 'Crimson Text', serif;
+}
+
+.btn-amen:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+.btn-amen:active {
+  transform: scale(0.98);
+}
+
+/* Rodapé */
+.prece-footer {
+  margin-top: 20px;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Mensagem de erro */
+.error-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-text {
+  font-size: 1.1rem;
+  color: #d32f2f;
+  margin-bottom: 16px;
+}
+
+.error-button {
+  background: var(--brown);
+  color: #fffdf8;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Crimson Text', serif;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .prece-card {
+    padding: 16px;
+  }
+  
+  .prece-nome {
+    font-size: 1rem;
+  }
+  
+  .prece-title {
+    font-size: 1.4rem;
+  }
+  
+  .prece-texto {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .btn-amen {
+    font-size: 1.1rem;
+    padding: 12px 32px;
+    min-width: 180px;
+  }
+}
+/* Botão Voltar */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
+  color: #fffdf8;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+  font-family: 'Crimson Text', serif;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+  color: #fffdf8;
+}
+
+.btn-voltar:active {
+  transform: scale(0.98);
+}
+
+.btn-voltar ion-icon {
+  font-size: 1.2rem;
+}

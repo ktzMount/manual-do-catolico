@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#8B5A2B"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <title>Santo do Dia - Manual do Católico</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/santo-do-dia.css" />
+</head>
+<body>
+  <div class="background-wrapper">
+    <main class="container py-3">
+      
+      <a href="../index.html" class="btn-voltar mb-3">
+        <ion-icon name="arrow-back"></ion-icon>
+        <span>Voltar</span>
+      </a>
+
+      <div id="loading" class="text-center py-5">
+        <div class="spinner-border text-brown" role="status">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
+        <p class="mt-3 text-brown">Carregando Santo do Dia...</p>
+      </div>
+
+      <div id="santo-content" style="display: none;">
+        
+        <!-- Imagem do Santo com botão de calendário -->
+        <div class="image-container mb-4">
+          <img id="santo-imagem" src="" alt="Santo do Dia" class="santo-imagem" />
+          <div class="image-overlay"></div>
+          
+          <!-- Botão Calendário (canto superior direito) -->
+          <button id="btn-calendario" class="btn-calendario" title="Selecionar data">
+            <ion-icon name="calendar-outline"></ion-icon>
+          </button>
+        </div>
+
+        <!-- Nome do Santo -->
+        <h1 id="santo-nome" class="santo-nome text-center mb-2"></h1>
+
+        <!-- Data Exibida -->
+        <p id="data-exibida" class="data-text text-center mb-4"></p>
+
+        <!-- Cards de Informação -->
+        <div class="info-card mb-4">
+          <h3 class="info-label">Dia Festivo</h3>
+          <p id="santo-dia-festivo" class="info-text"></p>
+        </div>
+
+        <div class="info-card mb-4">
+          <h3 class="info-label">Canonização</h3>
+          <p id="santo-canonizacao" class="info-text"></p>
+        </div>
+
+        <div class="info-card mb-4">
+          <h3 class="info-label">Descrição</h3>
+          <p id="santo-descricao" class="info-text"></p>
+        </div>
+
+        <div class="info-card historia-card mb-5">
+          <h3 class="historia-label">Vida e Martírio</h3>
+          <p id="santo-historia" class="historia-text"></p>
+        </div>
+
+        <div style="height: 80px;"></div>
+      </div>
+    </main>
+
+    <!-- Botão Flutuante de Compartilhar -->
+    <button id="btn-compartilhar" class="btn-compartilhar" title="Compartilhar">
+      <ion-icon name="share-social"></ion-icon>
+    </button>
+
+    <!-- Modal do Calendário -->
+    <div class="modal fade" id="modalCalendario" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Selecione uma data</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="calendario-container"></div>
+            <button id="btn-ir-hoje" class="btn-ir-hoje">
+              <ion-icon name="today"></ion-icon>
+              <span>Ir para hoje</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner de Anúncio -->
+    <footer class="ad-banner">
+      <div class="ad-placeholder">
+        <small>Espaço para anúncio</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../data/santos.js"></script>
+  <script src="../js/santo-do-dia.js"></script>
+</body>
+</html>
