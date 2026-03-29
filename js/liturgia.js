@@ -34,70 +34,74 @@ function formatarTextoComVersiculos(texto) {
 }
 
 // =========================================
-// Detecta abas disponíveis
+// Detecta abas disponíveis (VERSÃO CORRIGIDA)
 // =========================================
 function detectarAbas(leituras) {
   const abas = [];
   
   leituras.forEach((leitura, index) => {
     const titulo = leitura.titulo.toLowerCase();
+    const tipo = leitura.tipo;
     
-    if (titulo.includes('primeira') || 
-        titulo.includes('1ª') || 
-        titulo.includes('1a') ||
-        titulo.includes('1.') ||
-        (titulo.includes('leitura') && index === 0)) {
-      if (!abas.includes('primeira')) abas.push('primeira');
-    } else if (titulo.includes('salmo') || titulo.includes('responsorial')) {
+    // Lógica por TIPO (mais confiável que por título)
+    if (tipo === 'leitura') {
+      // Primeira leitura: índice 0 OU título contém "primeira/1ª"
+      if (index === 0 || titulo.includes('primeira') || titulo.includes('1ª') || titulo.includes('1a') || titulo.includes('1.')) {
+        if (!abas.includes('primeira')) abas.push('primeira');
+      }
+      // Segunda leitura: índice 1+ OU título contém "segunda/2ª"
+      else if (titulo.includes('segunda') || titulo.includes('2ª') || titulo.includes('2a') || titulo.includes('2.') || index >= 2) {
+        if (!abas.includes('segunda')) abas.push('segunda');
+      }
+    } 
+    else if (tipo === 'salmo' || titulo.includes('salmo') || titulo.includes('responsorial')) {
       if (!abas.includes('salmo')) abas.push('salmo');
-    } else if (titulo.includes('segunda') || 
-               titulo.includes('2ª') || 
-               titulo.includes('2a') ||
-               titulo.includes('2.')) {
-      if (!abas.includes('segunda')) abas.push('segunda');
-    } else if (titulo.includes('evangelho')) {
+    } 
+    else if (tipo === 'evangelho' || titulo.includes('evangelho')) {
       if (!abas.includes('evangelho')) abas.push('evangelho');
     }
   });
+  
+  // Debug: mostra quais abas foram detectadas
+  console.log('🔍 Abas detectadas:', abas);
+  console.log('📚 Leituras recebidas:', leituras.map(l => ({titulo: l.titulo, tipo: l.tipo})));
   
   return abas;
 }
 
 // =========================================
-// Obtém leitura atual
+// Obtém leitura atual (VERSÃO CORRIGIDA)
 // =========================================
 function getLeituraAtual(aba) {
   switch (aba) {
     case 'primeira':
-      return leituras.find(l => {
-        const titulo = l.titulo.toLowerCase();
-        return titulo.includes('primeira') || 
-               titulo.includes('1ª') || 
-               titulo.includes('1a') ||
-               titulo.includes('1.') ||
-               (titulo.includes('leitura') && leituras.indexOf(l) === 0);
-      }) || null;
+      // Prioriza por tipo, depois por título
+      return leituras.find(l => l.tipo === 'leitura' && 
+        (l.titulo.toLowerCase().includes('primeira') || 
+         l.titulo.toLowerCase().includes('1ª') || 
+         l.titulo.toLowerCase().includes('1a') ||
+         l.titulo.toLowerCase().includes('1.') ||
+         leituras.indexOf(l) === 0)) || null;
       
     case 'salmo':
-      return leituras.find(l => {
-        const titulo = l.titulo.toLowerCase();
-        return titulo.includes('salmo') || titulo.includes('responsorial');
-      }) || null;
+      return leituras.find(l => l.tipo === 'salmo' || 
+        l.titulo.toLowerCase().includes('salmo') || 
+        l.titulo.toLowerCase().includes('responsorial')) || null;
       
     case 'segunda':
+      // Busca por tipo OU por título OU por posição (após a primeira leitura e salmo)
       return leituras.find(l => {
         const titulo = l.titulo.toLowerCase();
-        return titulo.includes('segunda') || 
-               titulo.includes('2ª') || 
-               titulo.includes('2a') ||
-               titulo.includes('2.');
+        const isSegundaPorTipo = l.tipo === 'leitura' && titulo.includes('segunda');
+        const isSegundaPorTitulo = titulo.includes('2ª') || titulo.includes('2a') || titulo.includes('2.');
+        const isSegundaPorPosicao = l.tipo === 'leitura' && 
+          leituras.filter(x => x.tipo === 'leitura').indexOf(l) === 1; // Segunda leitura na lista
+        return isSegundaPorTipo || isSegundaPorTitulo || isSegundaPorPosicao;
       }) || null;
       
     case 'evangelho':
-      return leituras.find(l => {
-        const titulo = l.titulo.toLowerCase();
-        return titulo.includes('evangelho');
-      }) || null;
+      return leituras.find(l => l.tipo === 'evangelho' || 
+        l.titulo.toLowerCase().includes('evangelho')) || null;
       
     default:
       return null;
