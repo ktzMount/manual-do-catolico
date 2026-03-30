@@ -63,8 +63,6 @@ function carregarSantoDoDia(data) {
       // Fallback elegante se a imagem não existir
       imgElement.onerror = function() {
         this.style.display = 'none';
-        // Opcional: mostrar placeholder SVG
-        // this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400"><rect fill="%238B5A2B" width="300" height="400"/><text fill="white" x="50%" y="50%" text-anchor="middle" dy=".3em" font-family="serif" font-size="18">Santo do Dia</text></svg>';
       };
     }
     
@@ -187,14 +185,23 @@ function gerarCalendario() {
 }
 
 // =========================================
-// Compartilhamento
+// COMPARTILHAMENTO DIRETO (UMA OPÇÃO SÓ)
 // =========================================
 async function compartilharSanto() {
   const santoNome = document.getElementById('santo-nome').textContent;
   const dia = dataAtual.getDate();
   const mes = dataAtual.toLocaleString('pt-BR', { month: 'long' });
+  const descricaoCurta = document.getElementById('santo-descricao').textContent;
   
-  const mensagem = `🙏 *Santo do Dia: ${santoNome}*\n\n📅 ${dia} de ${mes}\n\nConfira no app Manual Do Católico!\nhttps://play.google.com/store/apps/details?id=com.manualdocatolico.app`;
+  // Links oficiais do app
+  const linkPlayStore = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
+  const linkPWA = 'https://manualdocatolico.vercel.app';
+  
+  // Rodapé personalizado (igual à Liturgia)
+  const rodapeCompartilhamento = `\n\n📲 Baixe no Android: ${linkPlayStore}\n🌐 Acesse também no: ${linkPWA}`;
+  
+  // Mensagem completa (igual à Liturgia)
+  const mensagem = `🙏 *Santo do Dia: ${santoNome}*\n\n📅 ${dia} de ${mes}\n\n${descricaoCurta}${rodapeCompartilhamento}`;
   
   if (navigator.share) {
     try {
@@ -241,12 +248,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       throw new Error('Nenhum dado de santos disponível');
     }
     
-    // Inicializar modal do Bootstrap
-    const modalEl = document.getElementById('modalCalendario');
-    if (modalEl && typeof bootstrap !== 'undefined') {
-      modalCalendario = new bootstrap.Modal(modalEl);
+    // Inicializar modal do calendário (Bootstrap)
+    const modalCalendarioEl = document.getElementById('modalCalendario');
+    if (modalCalendarioEl && typeof bootstrap !== 'undefined') {
+      modalCalendario = new bootstrap.Modal(modalCalendarioEl);
       
-      modalEl.addEventListener('shown.bs.modal', () => {
+      modalCalendarioEl.addEventListener('shown.bs.modal', () => {
         gerarCalendario();
       });
     }
@@ -266,7 +273,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (modalCalendario) modalCalendario.hide();
     });
     
-    // Botão compartilhar
+    // Botão compartilhar (compartilha direto, sem modal)
     document.getElementById('btn-compartilhar')?.addEventListener('click', compartilharSanto);
     
     // Carregar santo de hoje

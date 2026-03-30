@@ -250,11 +250,16 @@ async function buscarLiturgia() {
 // Prepara dados para compartilhamento
 // =========================================
 function prepararCompartilhamento(leitura) {
-  const baseUrl = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
+  // Seus links oficiais
+  const linkPlayStore = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
+  const linkPWA = 'https://manualdocatolico.vercel.app';
   
+  // Mensagem personalizada que você queria
+  const rodapeCompartilhamento = `\n\n Baixe no Android: https://play.google.com/store/apps/details?id=com.manualdocatolico.app\n Acesse também no: https://manualdocatolico.vercel.app/`;
+
   window.shareData = {
-    curto: `${leitura.titulo}\n${leitura.referencia}\n\nConfira no app Manual Do Católico!\n${baseUrl}`,
-    completo: `${leitura.titulo}\n${leitura.referencia}\n\n${leitura.texto}\n\nBaixe o app: ${baseUrl}`
+    curto: `${leitura.titulo}\n${leitura.referencia}${rodapeCompartilhamento}`,
+    completo: `${leitura.titulo}\n${leitura.referencia}\n\n${leitura.texto}${rodapeCompartilhamento}`
   };
 }
 

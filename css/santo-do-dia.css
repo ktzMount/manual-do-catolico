@@ -17,16 +17,29 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--brown);
+  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
+  color: #fffdf8;
   text-decoration: none;
   font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 25px;
   transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+  font-family: 'Crimson Text', serif;
 }
 
 .btn-voltar:hover {
-  background-color: rgba(139, 90, 43, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+  color: #fffdf8;
+}
+
+.btn-voltar:active {
+  transform: scale(0.98);
+}
+
+.btn-voltar ion-icon {
+  font-size: 1.2rem;
 }
 
 /* Imagem */
@@ -185,6 +198,37 @@ body {
 .modal-title {
   font-weight: 700;
   color: var(--brown-dark);
+}
+
+/* Modal de Compartilhamento */
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px;
+  background: var(--brown);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: 'Crimson Text', serif;
+  transition: background 0.2s;
+}
+
+.share-option:last-child {
+  margin-bottom: 0;
+}
+
+.share-option:hover {
+  background: var(--brown-dark);
+}
+
+.share-option ion-icon {
+  font-size: 1.2rem;
 }
 
 /* =========================================
@@ -391,33 +435,4 @@ body {
   .calendar-month { font-size: 1.1rem; }
   .calendar-weekday { font-size: 0.7rem; }
   .calendar-day { font-size: 0.85rem; }
-}
-/* Botão Voltar */
-.btn-voltar {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #8B5A2B 0%, #5D4037 100%);
-  color: #fffdf8;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: all 0.2s;
-  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
-  font-family: 'Crimson Text', serif;
-}
-
-.btn-voltar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
-  color: #fffdf8;
-}
-
-.btn-voltar:active {
-  transform: scale(0.98);
-}
-
-.btn-voltar ion-icon {
-  font-size: 1.2rem;
 }
