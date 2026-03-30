@@ -156,7 +156,7 @@ body {
 /* Botão Compartilhar */
 .btn-compartilhar {
   position: fixed;
-  bottom: 30px;
+  bottom: 120px;  /* ← AUMENTADO para 120px */
   right: 20px;
   width: 60px;
   height: 60px;

@@ -234,7 +234,7 @@ async function buscarLiturgia() {
     };
 
   } catch (error) {
-    console.error("❌ Erro ao buscar liturgia:", error);
+    console.error(" Erro ao buscar liturgia:", error);
     return {
       titulo: "Erro",
       data: "",
@@ -247,15 +247,15 @@ async function buscarLiturgia() {
 }
 
 // =========================================
-// Prepara dados para compartilhamento
+// Prepara dados para compartilhamento (MENSAGEM CORRIGIDA)
 // =========================================
 function prepararCompartilhamento(leitura) {
-  // Seus links oficiais
+  // Links oficiais do app
   const linkPlayStore = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
-  const linkPWA = 'https://manualdocatolico.vercel.app';
+  const linkPWA = 'https://manualdocatolico.vercel.app'; // ← URL BASE fixa
   
-  // Mensagem personalizada que você queria
-  const rodapeCompartilhamento = `\n\n Baixe no Android: https://play.google.com/store/apps/details?id=com.manualdocatolico.app\n Acesse também no: https://manualdocatolico.vercel.app/`;
+  // Rodapé personalizado COM EMOJIS (igual ao Santo do Dia)
+  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no: ${linkPWA}`;
 
   window.shareData = {
     curto: `${leitura.titulo}\n${leitura.referencia}${rodapeCompartilhamento}`,
@@ -264,18 +264,21 @@ function prepararCompartilhamento(leitura) {
 }
 
 // =========================================
-// Executa o compartilhamento
+// Executa o compartilhamento (URL CORRIGIDA)
 // =========================================
 async function executarCompartilhamento(tipo) {
   const texto = window.shareData?.[tipo];
   if (!texto) return;
+
+  // URL BASE fixa (igual ao Santo do Dia)
+  const linkPWA = 'https://manualdocatolico.vercel.app';
 
   if (navigator.share) {
     try {
       await navigator.share({
         title: 'Liturgia Diária',
         text: texto,
-        url: window.location.href
+        url: linkPWA  // ← USA A URL BASE, NÃO window.location.href
       });
     } catch (err) {
       if (err.name !== 'AbortError') console.error('Erro ao compartilhar:', err);

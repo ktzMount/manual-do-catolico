@@ -195,20 +195,20 @@ async function compartilharSanto() {
   
   // Links oficiais do app
   const linkPlayStore = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
-  const linkPWA = 'https://manualdocatolico.vercel.app';
+  const linkPWA = 'https://manualdocatolico.vercel.app'; // ← URL BASE do site (sem /html/...)
   
   // Rodapé personalizado (igual à Liturgia)
-  const rodapeCompartilhamento = `\n\n📲 Baixe no Android: ${linkPlayStore}\n🌐 Acesse também no: ${linkPWA}`;
+  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no: ${linkPWA}`;
   
-  // Mensagem completa (igual à Liturgia)
-  const mensagem = `🙏 *Santo do Dia: ${santoNome}*\n\n📅 ${dia} de ${mes}\n\n${descricaoCurta}${rodapeCompartilhamento}`;
+  // Mensagem completa
+  const mensagem = ` *Santo do Dia: ${santoNome}*\n\n ${dia} de ${mes}\n\n${descricaoCurta}${rodapeCompartilhamento}`;
   
   if (navigator.share) {
     try {
       await navigator.share({
         title: 'Santo do Dia',
         text: mensagem,
-        url: window.location.href
+        url: linkPWA  // ← USA A URL BASE, NÃO window.location.href
       });
     } catch (err) {
       if (err.name !== 'AbortError') console.error('Erro ao compartilhar:', err);
@@ -216,7 +216,7 @@ async function compartilharSanto() {
   } else {
     try {
       await navigator.clipboard.writeText(mensagem);
-      alert('Texto copiado! Cole onde quiser compartilhar. ✝️');
+      alert('Texto copiado! Cole onde quiser compartilhar.');
     } catch (err) {
       alert('Não foi possível compartilhar. Tente manualmente.');
     }
