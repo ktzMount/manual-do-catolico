@@ -25,9 +25,13 @@ function criarModalPWA(plataforma) {
     if (plataforma === 'ios') {
         conteudo = `
             <img src="/assets/images/og-image.png" alt="App Icon" class="modal-icon">
-            <h3>Instale o Manual no iPhone</h3>
-            <p>Tenha acesso rápido às orações! Toque no ícone de compartilhar <ion-icon name="share-outline"></ion-icon> e selecione <b>"Adicionar à Tela de Início"</b>.</p>
-        `;
+            <h3>Instale no seu iPhone</h3>
+            <div class="passo-a-passo">
+                <p>1. Toque nos <b>três pontinhos</b> <ion-icon name="ellipsis-vertical-outline"></ion-icon> ou no menu do navegador.</p>
+                <p>2. Toque em <b>Compartilhar</b> <ion-icon name="share-outline"></ion-icon>.</p>
+                <p>3. Selecione <b>"Adicionar à Tela de Início"</b> <ion-icon name="add-circle-outline"></ion-icon>.</p>
+                <p>4. Confirme o nome como <b>Manual do Católico</b> para criar o ícone.</p>
+            </div>`;
     } else {
         conteudo = `
             <img src="assets/images/og-image.png" alt="App Icon" class="modal-icon">
