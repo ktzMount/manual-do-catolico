@@ -282,3 +282,27 @@ html {
     background: none; border: none; color: #8B5A2B;
     text-decoration: underline; font-size: 0.85rem;
 }
+.passo-a-passo {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.passo-a-passo p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+}
+
+.passo-a-passo b {
+    color: #8B5A2B;
+}
+
+.passo-a-passo ion-icon {
+    font-size: 1.1rem;
+    color: #8B5A2B;
+    flex-shrink: 0; /* Impede o ícone de amassar em telas pequenas */
+}
