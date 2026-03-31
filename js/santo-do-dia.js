@@ -198,7 +198,7 @@ async function compartilharSanto() {
   const linkPWA = 'https://manualdocatolico.vercel.app'; // ← URL BASE do site (sem /html/...)
   
   // Rodapé personalizado (igual à Liturgia)
-  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no: ${linkPWA}`;
+  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no: `;
   
   // Mensagem completa
   const mensagem = ` *Santo do Dia: ${santoNome}*\n\n ${dia} de ${mes}\n\n${descricaoCurta}${rodapeCompartilhamento}`;

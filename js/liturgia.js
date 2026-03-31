@@ -63,8 +63,8 @@ function detectarAbas(leituras) {
   });
   
   // Debug: mostra quais abas foram detectadas
-  console.log('🔍 Abas detectadas:', abas);
-  console.log('📚 Leituras recebidas:', leituras.map(l => ({titulo: l.titulo, tipo: l.tipo})));
+  console.log(' Abas detectadas:', abas);
+  console.log(' Leituras recebidas:', leituras.map(l => ({titulo: l.titulo, tipo: l.tipo})));
   
   return abas;
 }
@@ -255,7 +255,7 @@ function prepararCompartilhamento(leitura) {
   const linkPWA = 'https://manualdocatolico.vercel.app'; // ← URL BASE fixa
   
   // Rodapé personalizado COM EMOJIS (igual ao Santo do Dia)
-  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no: ${linkPWA}`;
+  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no:`;
 
   window.shareData = {
     curto: `${leitura.titulo}\n${leitura.referencia}${rodapeCompartilhamento}`,
