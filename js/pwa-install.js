@@ -34,7 +34,7 @@ function criarBannerAndroid() {
     banner.id = 'pwa-link-banner';
     banner.innerHTML = `
         <div class="banner-pwa-content">
-            <img src="/assets/images/icons/og-image.png" alt="App Icon">
+            <img src="/assets/images/og-image.png" alt="App Icon">
             <div class="textos">
                 <p><b>App Manual do Católico</b></p>
                 <span>Versão oficial na Play Store</span>
