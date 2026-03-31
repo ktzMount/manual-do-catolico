@@ -30,7 +30,7 @@ function criarModalPWA(plataforma) {
         `;
     } else {
         conteudo = `
-            <img src="images/icons/og-image.png" alt="App Icon" class="modal-icon">
+            <img src="assets/images/og-image.png" alt="App Icon" class="modal-icon">
             <h3>App Manual do Católico</h3>
             <p>Nossa versão oficial está disponível na Play Store com recursos exclusivos.</p>
             <a href="https://play.google.com/store/apps/details?id=com.manualdocatolico.app" target="_blank" class="btn-modal-play" onclick="fecharModalPWA()">BAIXAR AGORA</a>
