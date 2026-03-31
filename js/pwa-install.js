@@ -24,7 +24,7 @@ function criarModalPWA(plataforma) {
 
     if (plataforma === 'ios') {
         conteudo = `
-            <img src="/assets/images/icons/og-image.png" alt="App Icon" class="modal-icon">
+            <img src="/assets/images/og-image.png" alt="App Icon" class="modal-icon">
             <h3>Instale o Manual no iPhone</h3>
             <p>Tenha acesso rápido às orações! Toque no ícone de compartilhar <ion-icon name="share-outline"></ion-icon> e selecione <b>"Adicionar à Tela de Início"</b>.</p>
         `;
