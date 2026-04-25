@@ -67,35 +67,37 @@ body {
 .tabs-wrapper {
   display: flex;
   background: var(--card-bg);
-  border-radius: 12px;
-  padding: 4px;
+  border-radius: 14px;
+  padding: 6px;
   border: 1px solid rgba(139, 90, 43, 0.15);
-  box-shadow: 0 2px 8px rgba(139, 90, 43, 0.1);
+  box-shadow: 0 2px 8px rgba(139, 90, 43, 0.08);
+  gap: 6px;
 }
 
 .tab {
   flex: 1;
-  padding: 12px 8px;
+  padding: 10px 8px;
   border-radius: 10px;
   border: none;
   background: transparent;
   font-family: 'Crimson Text', serif;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--brown);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .tab:hover {
-  background: rgba(139, 90, 43, 0.05);
+  background: rgba(139, 90, 43, 0.08);
 }
 
 .tab-ativa {
-  background: var(--brown);
+  background: linear-gradient(135deg, #8B5A2B, #5D4037);
   color: #fffdf8;
   font-weight: 700;
-  box-shadow: 0 2px 6px rgba(139, 90, 43, 0.3);
+  box-shadow: 0 3px 8px rgba(139, 90, 43, 0.35);
+  transform: scale(1.03);
 }
 
 /* Content Section */
@@ -150,18 +152,23 @@ body {
 }
 
 .texto-formatado {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.75;
   text-align: justify;
   color: var(--text-primary);
+  letter-spacing: 0.2px; /* 🔥 mais confortável */
+}
+.texto-formatado p {
+  margin-bottom: 10px;
 }
 
 .versiculo-num {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--brown);
   vertical-align: super;
-  margin-right: 2px;
+  margin-right: 3px;
+  opacity: 0.85;
 }
 
 /* Share Button */

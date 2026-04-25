@@ -4,49 +4,86 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  <url>
+    <loc>https://manualdocatolico.vercel.app/</loc>
+    <lastmod>2026-04-13T23:43:27+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://manualdocatolico.vercel.app/html/liturgia.html</loc>
+    <lastmod>2026-04-13T23:43:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://manualdocatolico.vercel.app/html/santo-do-dia.html</loc>
+    <lastmod>2026-04-13T23:43:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://manualdocatolico.vercel.app/html/oracoes.html</loc>
+    <lastmod>2026-04-13T23:43:28+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://manualdocatolico.vercel.app/html/santos.html</loc>
+    <lastmod>2026-04-13T23:43:29+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://manualdocatolico.vercel.app/html/tercos.html</loc>
+    <lastmod>2026-04-13T23:43:29+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://manualdocatolico.vercel.app/html/preces.html</loc>
+    <lastmod>2026-04-13T23:43:29+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=1</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=2</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=3</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=4</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=5</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=6</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=7</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=8</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=9</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=10</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=11</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=12</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=13</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=14</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=15</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=16</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=17</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=18</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=19</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=20</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=21</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=22</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=23</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=24</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=25</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=26</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=27</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=28</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=29</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=30</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=31</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=32</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=33</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=34</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=35</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=36</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=37</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=38</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=39</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=40</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/oracao-detalhe.html?id=41</loc><priority>0.60</priority></url>
 
-<url>
-  <loc>https://manualdocatolico.vercel.app/</loc>
-  <lastmod>2026-04-13T23:43:27+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/html/liturgia.html</loc>
-  <lastmod>2026-04-13T23:43:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/html/santo-do-dia.html</loc>
-  <lastmod>2026-04-13T23:43:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/html/oracoes.html</loc>
-  <lastmod>2026-04-13T23:43:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/html/santos.html</loc>
-  <lastmod>2026-04-13T23:43:29+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/html/tercos.html</loc>
-  <lastmod>2026-04-13T23:43:29+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/html/preces.html</loc>
-  <lastmod>2026-04-13T23:43:29+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://manualdocatolico.vercel.app/index.html</loc>
-  <lastmod>2026-04-13T23:43:29+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+  <url><loc>https://manualdocatolico.vercel.app/html/santo-detalhe.html?id=1</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/santo-detalhe.html?id=8</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/santo-detalhe.html?id=9</loc><priority>0.60</priority></url>
+  <url><loc>https://manualdocatolico.vercel.app/html/terco-detalhe.html?id=1</loc><priority>0.60</priority></url>
 </urlset>
