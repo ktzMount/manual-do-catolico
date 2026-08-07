@@ -41,6 +41,28 @@
       </div>
 
       <div id="liturgia-content" style="display: none;">
+
+        <div class="date-nav" id="date-nav">
+          <button class="date-arrow" id="btn-data-anterior" aria-label="Dia anterior">
+            <ion-icon name="chevron-back"></ion-icon>
+          </button>
+
+          <button class="date-center" id="btn-data-centro" aria-label="Abrir calendário">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span id="liturgia-data-exibida"></span>
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+
+          <button class="date-arrow" id="btn-data-proximo" aria-label="Próximo dia">
+            <ion-icon name="chevron-forward"></ion-icon>
+          </button>
+        </div>
+
+        <div class="domingo-toggle" id="domingo-toggle" style="display: none;">
+          <button class="domingo-btn" id="btn-domingo-sabado">Liturgia de Sábado</button>
+          <button class="domingo-btn" id="btn-domingo-domingo">Liturgia de Domingo</button>
+        </div>
+
         <div class="header text-center mb-4">
           <h1 id="liturgia-titulo" class="liturgia-title mb-2"></h1>
           <p id="liturgia-data" class="liturgia-date mb-1"></p>
@@ -75,33 +97,57 @@
       </div>
     </main>
 
-    <div class="modal fade" id="shareModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="calendarModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header border-0">
-            <h5 class="modal-title">Compartilhar</h5>
+            <h5 class="modal-title">Selecione uma data</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <button class="share-option" id="share-curto">
-              <ion-icon name="link"></ion-icon>
-              <span>Título e referência</span>
-            </button>
-            <button class="share-option" id="share-completo">
-              <ion-icon name="document-text"></ion-icon>
-              <span>Texto completo</span>
+            <div id="liturgia-calendario-container"></div>
+            <button class="btn btn-brown w-100 mt-3" id="btn-lit-ir-hoje">
+              <ion-icon name="today"></ion-icon>
+              <span>Ir para hoje</span>
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <footer class="ad-banner">
-      <div class="ad-placeholder">
-        <small>Espaço para anúncio</small>
+    <div class="modal fade" id="shareModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Compartilhar Leitura</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <button class="share-option" id="share-curto">
+              <ion-icon name="link"></ion-icon>
+              <div>
+                <div class="share-option-title">Título e referência</div>
+                <div class="share-option-desc">Compartilha apenas o título e a referência bíblica</div>
+              </div>
+            </button>
+            <button class="share-option" id="share-completo">
+              <ion-icon name="document-text"></ion-icon>
+              <div>
+                <div class="share-option-title">Texto completo</div>
+                <div class="share-option-desc">Compartilha o texto integral da leitura</div>
+              </div>
+            </button>
+            <button class="share-cancel" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <footer class="ad-banner">
       <br>
-      <a href="privacidade.html" style="font-size: 12px; color: #888; text-decoration: none;">Política de Privacidade</a>
+      <a href="../privacidade.html" style="font-size: 12px; color: #888; text-decoration: none;">Política de Privacidade</a>
+      <span style="font-size: 12px; color: #888;">&nbsp;·&nbsp;</span>
+      <a href="../sobre.html" style="font-size: 12px; color: #888; text-decoration: none;">Sobre & Contato</a>
     </footer>
 
   <script src="../js/bootstrap.bundle.min.js"></script>

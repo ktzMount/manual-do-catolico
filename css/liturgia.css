@@ -18,6 +18,78 @@ body {
   padding-top: 10px;
 }
 
+/* Navegação de data (igual ao app) */
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  gap: 16px;
+}
+
+.date-arrow {
+  background: none;
+  border: none;
+  color: var(--brown);
+  font-size: 1.5rem;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.date-arrow:active {
+  transform: scale(0.9);
+}
+
+.date-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card-bg);
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(139, 90, 43, 0.2);
+  color: var(--text-primary);
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.date-center ion-icon {
+  color: var(--brown);
+}
+
+/* Toggle sábado → domingo (igual ao app) */
+.domingo-toggle {
+  display: flex;
+  margin: 0 16px 8px 16px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid rgba(139, 90, 43, 0.15);
+}
+
+.domingo-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  font-family: 'Crimson Text', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brown);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.domingo-btn-ativo {
+  background: var(--brown);
+  color: #fffdf8;
+}
+
 .liturgia-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -209,10 +281,134 @@ body {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  text-align: left;
+  font-family: 'Crimson Text', serif;
 }
 
 .share-option:last-child {
   margin-bottom: 0;
+}
+
+.share-option-title {
+  color: #fffdf8;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.share-option-desc {
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.share-cancel {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+  background: none;
+  border: none;
+  font-family: 'Crimson Text', serif;
+  color: var(--brown);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px;
+}
+
+/* Calendário (igual ao Santo do Dia) */
+.calendar-header {
+  padding: 0 4px;
+}
+
+.btn-calendario-nav {
+  background: none;
+  border: none;
+  color: var(--brown);
+  font-size: 1.4rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-month-year {
+  line-height: 1.2;
+}
+
+.calendar-month {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+.calendar-year {
+  font-size: 0.85rem;
+  color: var(--brown);
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--brown);
+  text-transform: uppercase;
+  padding: 4px 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: 'Crimson Text', serif;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background: rgba(139, 90, 43, 0.1);
+}
+
+.calendar-day-empty {
+  pointer-events: none;
+}
+
+.calendar-day-today {
+  background: rgba(139, 90, 43, 0.12);
+  color: var(--brown);
+  font-weight: 700;
+}
+
+.calendar-day-selected {
+  background: var(--brown);
+  color: #fffdf8;
+  font-weight: 700;
+}
+
+.today-icon {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 2px;
 }
 
 /* Loading */

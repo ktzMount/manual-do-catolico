@@ -231,6 +231,35 @@ body {
   font-size: 1.2rem;
 }
 
+.share-option-title {
+  color: #fffdf8;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Crimson Text', serif;
+}
+
+.share-option-desc {
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 2px;
+  font-family: 'Crimson Text', serif;
+}
+
+.share-cancel {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+  background: none;
+  border: none;
+  font-family: 'Crimson Text', serif;
+  color: var(--brown);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px;
+}
+
 /* =========================================
    CALENDÁRIO BONITO E MODERNO
    ========================================= */

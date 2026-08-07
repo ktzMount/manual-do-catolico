@@ -185,42 +185,46 @@ function gerarCalendario() {
 }
 
 // =========================================
-// COMPARTILHAMENTO DIRETO (UMA OPÇÃO SÓ)
+// COMPARTILHAMENTO (MODAL COM 2 OPÇÕES, IGUAL AO APP)
 // =========================================
-async function compartilharSanto() {
+let shareModal;
+
+function compartilharSanto(tipo) {
   const santoNome = document.getElementById('santo-nome').textContent;
   const dia = dataAtual.getDate();
   const mes = dataAtual.toLocaleString('pt-BR', { month: 'long' });
   const descricaoCurta = document.getElementById('santo-descricao').textContent;
-  
-  // Links oficiais do app
+  const historia = document.getElementById('santo-historia').textContent;
+
   const linkPlayStore = 'https://play.google.com/store/apps/details?id=com.manualdocatolico.app';
-  const linkPWA = 'https://manualdocatolico.vercel.app'; // ← URL BASE do site (sem /html/...)
-  
-  // Rodapé personalizado (igual à Liturgia)
-  const rodapeCompartilhamento = `\n\n Baixe no Android: ${linkPlayStore}\n Acesse também no: `;
-  
-  // Mensagem completa
-  const mensagem = ` *Santo do Dia: ${santoNome}*\n\n ${dia} de ${mes}\n\n${descricaoCurta}${rodapeCompartilhamento}`;
-  
+
+  const mensagem = tipo === 'curto'
+    ? `🙏 *Santo do Dia: ${santoNome}*\n\n📅 ${dia} de ${mes}\n\n💫 ${descricaoCurta}\n\n📲 Baixe o app Manual do Católico:\n${linkPlayStore}`
+    : `🙏 *Santo do Dia: ${santoNome}*\n\n📅 ${dia} de ${mes}\n\n💫 ${descricaoCurta}\n\n📖 ${historia}\n\n📲 Baixe o app Manual do Católico:\n${linkPlayStore}`;
+
   if (navigator.share) {
     try {
-      await navigator.share({
-        title: 'Santo do Dia',
-        text: mensagem,
-        url: linkPWA  // ← USA A URL BASE, NÃO window.location.href
+      navigator.share({
+        title: `Santo do Dia: ${santoNome}`,
+        text: mensagem
       });
     } catch (err) {
       if (err.name !== 'AbortError') console.error('Erro ao compartilhar:', err);
     }
   } else {
     try {
-      await navigator.clipboard.writeText(mensagem);
+      navigator.clipboard.writeText(mensagem);
       alert('Texto copiado! Cole onde quiser compartilhar.');
     } catch (err) {
       alert('Não foi possível compartilhar. Tente manualmente.');
     }
   }
+
+  if (shareModal) shareModal.hide();
+}
+
+function abrirModalCompartilhar() {
+  if (shareModal) shareModal.show();
 }
 
 // =========================================
@@ -273,8 +277,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (modalCalendario) modalCalendario.hide();
     });
     
-    // Botão compartilhar (compartilha direto, sem modal)
-    document.getElementById('btn-compartilhar')?.addEventListener('click', compartilharSanto);
+    // Botão compartilhar (abre modal com 2 opções)
+    document.getElementById('btn-compartilhar')?.addEventListener('click', abrirModalCompartilhar);
+
+    // Modal de compartilhamento
+    const shareModalEl = document.getElementById('modalCompartilhar');
+    if (shareModalEl && typeof bootstrap !== 'undefined') {
+      shareModal = new bootstrap.Modal(shareModalEl);
+    }
+    document.getElementById('share-santo-curto')?.addEventListener('click', () => compartilharSanto('curto'));
+    document.getElementById('share-santo-completo')?.addEventListener('click', () => compartilharSanto('completo'));
     
     // Carregar santo de hoje
     dataAtual = new Date();

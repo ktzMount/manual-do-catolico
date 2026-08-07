@@ -16,7 +16,7 @@ window.precesData = [
   {
     id: '3',
     nome: 'Oração dos Casais',
-    texto: `Santíssima Trindade, Pai, Filho e Espírito Santo, obrigado pelo profundo dom do sacramento do matrimônio. Obrigado pelo magnífico presente que é o meu esposo(a), a quem Tu, perfeita providência, escolheste para mim desde toda a eternidade. Permite que eu sempre o(a) trate como realeza, com toda a honra, respeito e dignidade que merece. Ajuda-me, meu Deus, a ser desprendido(a) no meu casamento, para dar tudo pelo meu esposo(a), sem reservar nada para mim, sem esperar nada em troca, reconhecendo e agradecendo tudo o que ele(a) faz por mim e pela nossa família todos os dias.`
+    texto: `Santíssima Trindade, Pai, Filho e Espírito Santo, obrigado pelo profundo dom do sacramento do matrimônio. Obrigado pelo magnífico presente que é o meu esposo(a), a quem Tu, perfeita providência, escolheste para mim desde toda a eternidade. Permite que eu sempre o(a) trate como realeza, com toda a honra, respeito e dignidade que merece.Ajuda-me, meu Deus, a ser desprendido(a) no meu casamento, para dar tudo pelo meu esposo(a), sem reservar nada para mim, sem esperar nada em troca, reconhecendo e agradecendo tudo o que ele(a) faz por mim e pela nossa família todos os dias.`
   },
   {
     id: '4',

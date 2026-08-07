@@ -40,7 +40,7 @@ window.oracoesData =
     "id": "7",
     "nome": "Santa Filomena",
     "texto": "Ó Gloriosa Santa Filomena, Virgem e Mártir, exemplo de fé e esperança, generosa na caridade, a vós suplico, escutai a minha prece. Do Céu onde reinais, faça cair sobre mim toda proteção e auxílio de que necessito, neste momento em que minhas forças se enfraquecem. Vós que sois tão poderosa junto a Deus, intercedei por mim e alcançai-me a graça que vos peço \n(mencione a graça que deseja receber)\n Ó Santa Filomena, ilustre por tantos milagres, rogai por mim. Não me abandonais, mas lançai vosso olhar como um raio de esperança sobre mim e minha família. Afastai as tentações, dai paz a minha alma e abençoai a minha casa. Ò Santa Filomena, pelo sangue que derramastes por amor a Jesus Cristo, alcançai-me a graça que vos peço.",
-    "imagem": "assets/images/santafilomenaicon.png"
+    "imagem": "assets/images/santafilomenaicon.jpg"
   },
   {
     "id": "8",
@@ -99,7 +99,7 @@ window.oracoesData =
   {
     "id": "17",
     "nome": "São Jorge",
-    "texto": "Ó glorioso São Jorge, intrépido mártir e invencível guerreiro da fé, a vós recorremos com confiança. Defendei-nos contra os perigos, protegei-nos das tentações e dai-nos a força para lutar contra todo mal. Amparai-nos com vosso escudo e guiai-nos com vossa espada na caminhada rumo à salvação.",
+    "texto": "Eu andarei vestido e armado com as armas de São Jorge para que meus inimigos;\n Tendo pés não me alcancem;\n Tendo mãos não me peguem;\n Tendo olhos não me vejam;\n e nem em pensamentos eles possam me fazer mal.\n Armas de fogo ao meu corpo não alcançarão;\n Facas e lanças se quebrem, sem o meu corpo tocar; cordas e correntes se arrebentem sem o meu corpo amarrar\nPois eu estou vestido com as roupas e as armas de São Jorge",
     "imagem": "assets/images/saojorgesf.png"
   },
   {
@@ -112,7 +112,7 @@ window.oracoesData =
     "id": "19",
     "nome": "Santa Rita de Cássia",
     "texto": "Ó poderosa e gloriosa Santa Rita, chamada Santa dos impossíveis, advogada dos casos desesperados, auxiliadora da última hora, refúgio e abrigo da dor que arrasta para o abismo do pecado e da desesperança: com toda a confiança no vosso poder junto ao Coração de Jesus, a vós recorro no caso difícil e inesperado que oprime dolorosamente o meu coração.\n\nVós, que fostes escolhida por Deus como advogada dos casos mais desesperados, alcançai a graça que vos peço (faça o pedido em silêncio). Apresentai o meu pedido ao Senhor e, por vossa intercessão, fazei que o meu coração alcance a paz, o alívio e a solução.",
-    "imagem": "assets/images/santaritadecassiasf.png"
+    "imagem": "assets/images/santaritadecassiasf.jpg"
   },
   {
     "id": "20",
@@ -166,7 +166,7 @@ window.oracoesData =
     "id": "28",
     "nome": "Oração a Todos os Santos",
     "texto": "Ó Deus, Onipotente e Eterno, que pela força do Teu Espírito Santo\nsantificastes a vida de tantos fiéis que Vos serviram ao longo de todos os tempos e em todos os lugares,\ntestemunhando a Vossa grandeza, amor e bondade,\nfazei que, pela poderosa intercessão de Todos os Santos, que Vós bem conheceis,\ncheguemos nós também à graça da vida eterna junto de Vós,\nna companhia de Vosso Santíssimo Filho Jesus Cristo, Nossa Senhora e Todos os Santos e Santas.\n\nTodos os Santos de Deus, rogai por nós.",
-    "imagem": "assets/images/todosossantossf.png"
+    "imagem": "assets/images/todosossantossf.jpg"
   },
   {
     "id": "29",
@@ -201,7 +201,7 @@ window.oracoesData =
   {
     "id": "34",
     "nome": "São José Operário",
-    "texto": "Pedimos vossa intercessão pelo mundo do trabalho, a fim de que aí reine o espírito cristão de justiça e paz, conforme os ensinamentos da Igreja; que os trabalhadores se unam em organizações que defendam os seus direitos e respeitem os alheios; que patrões e empregados se tratem mutuamente como irmãos e filhos do mesmo Pai, que se convertam os que ignoram a dignidade da pessoa humana e exploram o operário e o pobre.\n\nConvosco, São José, agradecemos a Deus a saúde, a força, a disposição e as habilidades que nos permitem providenciar o sustento de nossos familiares e ser membros úteis da sociedade. Tudo para Jesus, tudo por Maria, tudo à vossa imitação, ó patriarca São José! Tal será nossa inspiração na vida e na morte.",
+    "texto": "Glorioso São José, modelo de todos os que se dedicam ao trabalho, obtende-me a graça de trabalhar com espírito de penitência para expiação de meus numerosos pecados;\nde trabalhar com consciência, pondo o culto do dever acima de minhas inclinações;\nde trabalhar com recolhimento e alegria, olhando como uma honra empregar e desenvolver pelo trabalho os dons recebidos de Deus;\nde trabalhar com ordem, paz, moderação e paciência, sem nunca recuar perante o cansaço e as dificuldades;\nde trabalhar, sobretudo com pureza de intenção e com desapego de mim mesmo, tendo sempre diante dos olhos a morte e a conta que deverei dar do tempo perdido, dos talentos inutilizados, do bem omitido e da vã complacência nos sucessos, tão funesta à obra de Deus!\nTudo por Jesus, tudo por Maria, tudo à vossa imitação, oh! Patriarca São José! Tal será a minha divisa na vida e na morte.",
     "imagem": "assets/images/saojoseoperariosf.png"
   },
   {
@@ -251,5 +251,17 @@ window.oracoesData =
     "nome": "Santo Agostinho",
     "texto": "Vós sois, ó Jesus, o Cristo, meu Pai santo, meu Deus misericordioso, meu Rei infinitamente grande; sois meu bom pastor, meu único mestre, meu auxílio cheio de bondade, meu bem-amado de uma beleza maravilhosa, meu pão vivo, meu sacerdote eterno, meu guia para a pátria, minha verdadeira luz, minha santa doçura, meu reto caminho, sapiência minha preclara, minha pura simplicidade, minha paz e concórdia; sois, enfim, toda a minha salvaguarda, minha herança preciosa, minha eterna salvação… \nÓ Jesus Cristo, amável Senhor, por que, em toda a minha vida, amei, por que desejei outra coisa senão vós? Onde estava eu quando não pensava em vós? Ah! que, pelo menos, a partir deste momento meu coração só deseje a vós e por vós se abrase, Senhor Jesus! Desejos de minha alma, correi, que já bastante tardastes; apressai-vos para o fim a que aspirais; procurai em verdade aquele que procurais. Ó Jesus, anátema seja quem não vos ama. Aquele que não vos ama seja repleto de amarguras. Ó doce Jesus, sede o amor, as delícias, a admiração de todo coração dignamente consagrado à vossa glória. Deus de meu coração e minha partilha, Jesus Cristo, que em vós meu coraçao desfaleça, e sede vós mesmo a minha vida. Acenda-se em minha alma a brasa ardente de vosso amor e se converta num incêndio todo divino, a arder para sempre no altar de meu coração; que inflame o íntimo do meu ser, e abrase o âmago de minha alma; para que no dia de minha morte eu apareça diante de vós inteiramente consumido em vosso amor.",
     "imagem": "assets/images/santoagostinho.png"
+  },
+  {
+    "id": "43",
+    "nome": "Couraça de São Patricío",
+    "texto": "Hoje me levanto com poderosa força e invoco à Santíssima Trindade com Trinitária fé professando a unidade do Criador e da criatura.\nHoje me levanto com a força do nascimento de Cristo, com a graça do seu batismo, com a força de sua crucificação e morte, com a força de sua ressurreição e ascensão, com a força de seu retorno no dia do juízo.\nHoje me levanto com a força do amor do Querubim, obediente aos anjos, a serviço dos arcanjos, na esperança da ressurreição para encontrar consolo com as orações dos patriarcas, as predições dos profetas, os ensinamentos dos apóstolos, a fé dos confessores, a inocência das santas virgens, os feitos dos homens de bem.\nHoje me levanto com a força dos céus: a luz do sol, o brilho da lua, o esplendor do fogo, a velocidade do trovão, a rapidez do vento, a profundidade dos mares, a permanência da terra, a firmeza da rocha.\nHoje me levanto com a força de Deus que me guia: sua grandeza que me apoia, sua sabedoria que me guia, seu olho que me cuida, seu ouvido que me escuta, sua palavra que me fala, sua mão que me defende, seu caminho para segui-lo, seu escudo para proteger-me, sua Eucaristia para livrar-me das armadilhas do demônio, da tentação dos vícios, daqueles que me desejam o mal, longe ou perto, só ou acompanhado.\nInvoco hoje estes poderes para que se levantem entre mim e estes males, contra todos e cruéis infames poderes que desejam o mal, para meu corpo, contra as invocações dos falsos profetas, contra as nefastas leis da pagania, contra as falsas leis da heresia, contra as artes da idolatria, contra os feitiços das bruxas, quiromantes e feiticeiros, contra todo conhecimento que corrompe o corpo e a alma.\nCristo que me protege hoje contra o veneno, contra o fogo, contra morrer afogado, contra ser ferido, para que assim venha a mim abundante consolo.\nCristo comigo,\nCristo à minha frente,\nCristo atrás de mim,\nCristo em mim,\nCristo abaixo de mim,\nCristo sobre mim,\nCristo à minha direita,\nCristo à minha esquerda,\nCristo quando me deito,\nCristo quando me sento,\nCristo quando me levanto,\nCristo no coração de todo homem que pensa em mim,\nCristo na boca de quem fale de mim,\nCristo em todo olho que me vê,\nCristo em todo ouvido que me ouve.\nHoje me levanto com poderosa força e invoco à Santíssima Trindade com trinitária fé professando a unidade do Criador e da criatura. Amém.",
+    "imagem": "assets/images/couracadesaopatricio.png"
+  },
+  {
+    "id": "44",
+    "nome": "São Cristovão",
+    "texto": "Ó São Cristóvão, que atravessastes a correnteza furiosa de um rio com toda a firmeza e segurança porque carregáveis nos ombros o Menino Jesus,\nfazei que Deus se sinta sempre bem em meu coração, porque então eu terei sempre firmeza e segurança no guidão do meu carro\ne enfrentarei corajosamente todas as correntezas que eu tiver que enfrentar, venham elas dos homens ou do espírito infernal.\nSão Cristóvão, rogai por nós.",
+    "imagem": "assets/images/saocristovao.png"
   }
 ];
