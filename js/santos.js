@@ -169,11 +169,14 @@ function inicializarDetalhe() {
   
   santos = window.santosData;
   
-  // Pegar nome da URL
+  // Pegar parâmetros da URL
   const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
   const nome = decodeURIComponent(params.get('nome') || '');
   
-  const santo = santos.find(s => s.nome === nome);
+  const santo = id
+    ? santos.find(s => String(s.id) === id)
+    : santos.find(s => s.nome === nome);
   renderizarDetalhe(santo);
 }
 
